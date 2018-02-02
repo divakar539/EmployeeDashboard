@@ -1,0 +1,20 @@
+.tile{
+    border : 5px solid #455A64;
+    /*margin: 10px;
+   /* margin-left : 15px;*/
+   margin-right : 3px;
+   margin-bottom :3px;
+   background-color: white
+}
+.loadLink{
+    
+    text-align: center;
+    padding-top : 5px;
+}
+
+.linkText{
+    font-weight : bold;
+    font-size : 20px;
+}
+
+

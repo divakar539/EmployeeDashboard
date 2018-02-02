@@ -1,0 +1,16 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-brand">
+      <img src="assets/ricoh-logo.png" alt="logo" class="ico"/>
+    </div >
+      <span class="navbar-text" *ngIf="!_authenticateService.isLoggedIn"><strong>Employee Dashboard</strong></span>
+    <div *ngIf="_authenticateService.isLoggedIn">
+      <span style="padding-right:35px"><strong>Total # of Employees :{{employeeCount}}</strong></span>
+      <span style="padding-left:50px"><strong>Time :{{date | date : "HH:mm"}}</strong></span>
+    </div>
+    <div class="nav navbar-nav">
+      <span *ngIf="!_authenticateService.isLoggedIn"><a [routerLink]="['/login']">Login</a></span>
+      <span *ngIf="_authenticateService.isLoggedIn"><a (click)="onLogout()" href="#">Logout</a></span>
+    </div>
+  </div>
+</nav>

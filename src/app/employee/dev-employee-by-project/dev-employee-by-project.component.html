@@ -1,0 +1,20 @@
+<div style="display: block">
+ <div class="ico">
+   <button  class="btn btn-link btn-lg " (click)="refreshData()">
+        <span class="glyphicon glyphicon-refresh"></span>
+   </button>
+   <button *ngIf="_employeeService.isEnlarged"class="btn btn-link btn-lg " (click)="onClose()">
+                <span class="glyphicon glyphicon-remove"></span>
+   </button>
+ </div>
+ <strong class="head">Developer Employeed By Projects</strong>
+ <canvas *ngIf="barChartData && barChartLabels" baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+ </canvas>
+ <div *ngIf="!barChartData || !barChartLabels && employees.length==0"><h3>Loading..Please wait</h3></div>
+ <div *ngIf="!employees">{{errorMessage}}</div>
+</div>

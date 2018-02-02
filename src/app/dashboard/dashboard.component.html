@@ -1,0 +1,36 @@
+<div class="container">
+ <div class="row">
+   <button class="offset-lg-1 col-lg-5 tile " (click)="onEnLarge('dev')">
+        <app-dev-employee-by-project></app-dev-employee-by-project>
+   </button>
+   <button class="col-lg-5 tile" (click)="onEnLarge('age')" >
+      <app-employee-by-age></app-employee-by-age>
+   </button>
+ </div>
+ <div class="row">
+   <button class="offset-lg-1 col-lg-5 tile " (click)="onEnLarge('region')">
+      <app-employee-by-region></app-employee-by-region>
+   </button>
+   <button class="col-lg-5 tile " (click)="onEnLarge('joinDate')">
+       <app-employee-by-join-date></app-employee-by-join-date>  
+   </button>
+ </div>
+ <div class="loadLink" *ngIf="!Load ">
+     <button (click)="isLoadMore()" class="btn btn-link linkText">LoadMore..</button>
+ </div>
+ <div *ngIf="Load">
+  <div class="row" >
+   <button class="offset-lg-1 col-lg-5 tile tile5" (click)="onEnLarge('compJoinDate')">
+      <app-employee-by-company-join-date></app-employee-by-company-join-date>
+   </button>
+   <button class="col-lg-5 tile " (click)="onEnLarge('addr')">
+      <app-employee-by-address></app-employee-by-address>
+   </button>
+  </div>
+   <div class="row" >
+    <button class=" offset-lg-3 col-lg-6 tile " (click)="onEnLarge('title')">
+      <app-employee-by-title></app-employee-by-title>
+    </button>
+   </div>
+ </div>
+</div>
