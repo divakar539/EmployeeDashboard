@@ -9,5 +9,4 @@ import { AuthenticateService } from './services/authenticate.service';
   providers : []
 })
 export class AppComponent {
-  title = 'app';
 }

@@ -9,8 +9,8 @@ import {FlashMessagesModule} from "angular2-flash-messages"
 
 
 import { AppComponent } from './app.component';
-import { DevEmployeeByProjectComponent } from './Employee/dev-employee-by-project/dev-employee-by-project.component';
 import { Employee } from './employee/employee.component.ts/employee.component';
+import {DevEmployeeByProjectComponent} from './employee/dev-employee-by-project/dev-employee-by-project.component'
 import { EmployeeByAddressComponent } from './employee/employee-by-address/employee-by-address.component';
 import { EmployeeByAgeComponent } from './employee/employee-by-age/employee-by-age.component';
 import { EmployeeByCompanyJoinDateComponent } from './employee/employee-by-company-join-date/employee-by-company-join-date.component';
@@ -29,15 +29,15 @@ import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messa
 const appRoutes : Routes = [
  {path :'',component : HomeComponent},
  {path :'login',component : LoginComponent},
- {path :'dashboard',component :DashboardComponent},
- {path : 'dashboard/devEmpByProjects' ,component : DevEmployeeByProjectComponent},
- {path : 'dashboard/empByAddress' ,component : EmployeeByAddressComponent},
- {path : 'dashboard/empByAge' ,component : EmployeeByAgeComponent},
- {path : 'dashboard/empByJoinDate' ,component : EmployeeByJoinDateComponent},
- {path : 'dashboard/empAtStart' ,component : EmployeeByCompanyJoinDateComponent},
- {path : 'dashboard/empByRegion' ,component : EmployeeByRegionComponent},
- {path : 'dashboard/empByTitle' ,component : EmployeeByTitleComponent}
-]
+ {path :'dashboard',component :DashboardComponent,canActivate:[AuthGuard]},
+ {path : 'dashboard/devEmpByProjects' ,component : DevEmployeeByProjectComponent,canActivate:[AuthGuard]},
+ {path : 'dashboard/empByAddress' ,component : EmployeeByAddressComponent,canActivate:[AuthGuard]},
+ {path : 'dashboard/empByAge' ,component : EmployeeByAgeComponent,canActivate:[AuthGuard]},
+ {path : 'dashboard/empByJoinDate' ,component : EmployeeByJoinDateComponent,canActivate:[AuthGuard]},
+ {path : 'dashboard/empAtStart' ,component : EmployeeByCompanyJoinDateComponent,canActivate:[AuthGuard]},
+ {path : 'dashboard/empByRegion' ,component : EmployeeByRegionComponent,canActivate:[AuthGuard]},
+ {path : 'dashboard/empByTitle' ,component : EmployeeByTitleComponent,canActivate:[AuthGuard]}
+];
 
 @NgModule({
   declarations: [
